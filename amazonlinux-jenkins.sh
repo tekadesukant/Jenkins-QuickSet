@@ -39,8 +39,7 @@ yum install jenkins -y >> $LOG_FILE 2>&1
 check_status "Installing Java 11 and Jenkins"
 
 # Configure default Java version (if needed)
-# Uncomment if you need to set Java 11 as default
-# update-alternatives --config java
+update-alternatives --config java
 
 # Step 4: Start Jenkins and verify the service status
 log "Starting Jenkins service..."
