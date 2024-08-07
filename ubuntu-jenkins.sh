@@ -50,7 +50,10 @@ log "Starting Jenkins service..."
 systemctl start jenkins.service >> $LOG_FILE 2>&1
 check_status "Starting Jenkins service"
 
-log "Checking Jenkins service status..."
-systemctl status jenkins.service | grep -i Active
-
 log "Jenkins installation completed successfully."
+
+log "Checking Jenkins service status..."
+tput setaf 6 ;  systemctl status jenkins.service | grep -i Active ; tput setaf 7
+
+log "jenkins Administrator password"
+cat /var/lib/jenkins/secrets/initialAdminPassword
