@@ -33,10 +33,10 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key >> $L
 check_status "Adding Jenkins repository and importing GPG key"
 
 # Step 3: Install Java 11 and Jenkins
-log "Installing Java 11 and Jenkins..."
-amazon-linux-extras install java-openjdk11 -y >> $LOG_FILE 2>&1
+log "Installing Java 17 and Jenkins..."
+yum install java-17-amazon-corretto -y >> $LOG_FILE 2>&1
 yum install jenkins -y >> $LOG_FILE 2>&1
-check_status "Installing Java 11 and Jenkins"
+check_status "Installing Java 17 and Jenkins"
 
 # Configure default Java version (if needed)
 update-alternatives --config java
