@@ -36,11 +36,11 @@ log "Adding Jenkins repository and importing GPG key..."
 check_status "Adding Jenkins repository and importing GPG key"
 
 # Step 3: Install Java 11 and Jenkins
-log "Installing Java 11 and Jenkins..."
+log "Installing Java 17 and Jenkins..."
 apt-get update -y >> $LOG_FILE 2>&1
 apt-get install fontconfig openjdk-17-jre -y >> $LOG_FILE 2>&1
 apt-get install jenkins -y >> $LOG_FILE 2>&1
-check_status "Installing Java 11 and Jenkins"
+check_status "Installing Java 17 and Jenkins"
 
 # Configure default Java version (if needed)
 update-alternatives --config java
